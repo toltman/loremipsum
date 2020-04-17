@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorem Ipsum Generator</title>
+    <style type="text/css" media="screen">
+      body {
+        text-align: center;
+      }
+
+      div {
+        padding: 5px;
+      }
+
+      .num-counts {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input {
+        text-align: center;
+      }
+
+      div.radio-buttons {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem Ipsum Generator</h1>
+    <form action="/" method="POST">
+      <div class="num-counts">
+        <input
+          type="number"
+          placeholder="5"
+          id="count"
+          name="count"
+          min="0"
+          value="5"
+        /><br />
+        <div class="radio-buttons">
+          <input type="radio" id="words" name="unit" value="words" checked />
+          <label for="words">Words</label><br />
+          <input type="radio" id="sentences" name="unit" value="sentences" />
+          <label for="sentences">Sentences</label><br />
+          <input type="radio" name="unit" id="paragraphs" value="paragraphs" />
+          <label for="paragraphs">Paragraphs</label><br />
+        </div>
+      </div>
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          name="start"
+          id="start"
+          value="yes"
+          checked="checked"
+        />
+        <label for="start">
+          Start with "Lorem ipsum dolor sit amet..."
+        </label>
+      </div>
+      <div>
+        <input
+          type="submit"
+          id="generate"
+          name="generate"
+          value="Generate Lorem Ipsum"
+        />
+      </div>
+    </form>
+  </body>
+</html>
