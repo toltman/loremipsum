@@ -9,9 +9,9 @@ function gen(inputs, res) {
     return text.split(". ").slice(0, parseInt(inputs.count)).join(". ") + ".";
   }
   if (inputs.unit === "paragraphs") {
-    let paraText = "\n\n";
+    let paraText = "";
     for (let i = 0; i < inputs.count; i++) {
-      paraText = text + paraText;
+      paraText = paraText + "<p>" + text + "</p>";
     }
     return paraText;
   } else {

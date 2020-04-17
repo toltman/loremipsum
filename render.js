@@ -8,7 +8,12 @@ function form(res) {
 
 function lorem(inputs, res) {
   const loremText = textGen.gen(inputs);
-  res.write(loremText);
+  let fileContents = fs.readFileSync("./index.html", { encoding: "utf8" });
+  fileContents = fileContents.replace(
+    '<div class="text"></div>',
+    `<div class="text">${loremText}</div>`
+  );
+  res.write(fileContents);
 }
 module.exports.form = form;
 module.exports.lorem = lorem;
