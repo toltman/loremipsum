@@ -1,4 +1,5 @@
 const fs = require("fs");
+const textGen = require("./textGen.js");
 
 function form(res) {
   const index = fs.readFileSync("./index.html", { encoding: "utf8" });
@@ -6,7 +7,8 @@ function form(res) {
 }
 
 function lorem(inputs, res) {
-  res.write(JSON.stringify(inputs));
+  const loremText = textGen.gen(inputs);
+  res.write(loremText);
 }
 module.exports.form = form;
 module.exports.lorem = lorem;
